@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://media.discordapp.net/attachments/1033604720570404874/1040123011187081226/500px-493Arceus.png" />
 </p>
-<h1 align="center">midori.js</h1>
+<h1 align="center">midori.js-lite</h1>
 
 
 **The most powerful string package to create a discord bot with custom features having aoi.js features!**
@@ -65,7 +65,7 @@ bot.command({
 <br>
 <strong>ItsHyper</strong>
 <br>
-<strong>spook>/strong>
+<strong>spook</strong>
 
 
 
