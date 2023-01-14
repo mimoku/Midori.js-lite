@@ -1,7 +1,7 @@
 {
-  "name": "midori.js",
-  "version": "4.0.0",
-  "description": "midori.js is the most powerful string package to create a discord bot with custom features having aoi.js features!",
+  "name": "midori.js-lite",
+  "version": "1.0.1",
+  "description": "midori.js-lite is the most powerful string package to create a discord bot with custom features having aoi.js features!",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,14 +22,16 @@
     "neko",
     "image",
     "Image Manipulation",
-    "@types/node"
+    "@types/node",
+    "lite",
+    "bdfd"
   ],
-  "author": "Katsu",
+  "author": "Spook",
   "license": "MIT",
-  "homepage": "https://github.com/xHyperJS/midori.js",
+  "homepage": "https://github.com/mimoku/Midori.js-lite",
   "dependencies": {
     "@types/node": "^18.0.6",
-    "aoi.js": "^6.0.0",
+    "aoi.js": "^5.5.5",
     "node-fetch": "^2.0.0"
   }
 }
