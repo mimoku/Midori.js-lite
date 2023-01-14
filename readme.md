@@ -6,21 +6,17 @@
 
 **The most powerful string package to create a discord bot with custom features having aoi.js features!**
 
+**Thanks to the actual owner of Midori.js! Huge credits to him**
 
 
-
-[Check our docs](https://team-hype.gitbook.io/untitled-1/starting/setup)
-<br>
-[Report a bug](https://discord.gg/xPURT2B3sA)
-<br>
-[Discord server](https://discord.gg/xPURT2B3sA)
+[Discord Server]([https://discord.gg/xPURT2B3sA](https://discord.gg/CHXQzQ6t))
 
 
 * New features <br> <br>
 * $ver [kiss] [handhold] [nom] [poke] [glomp] [waifu] [shinobu] [oppai] <br>
 * $nsfw (function in docs) (i was forced to add) <br>
 * Command handler (by using fs) <br>
-* Aoi.js v6 support <br>
+* Aoi.js v5 support <br>
 * Minor changes <br>
 
 
@@ -33,7 +29,7 @@ Install
 
 
 ```js
-npm i midori.js
+npm i midori.js-lite
 ```
 
 ---
@@ -44,12 +40,12 @@ const { AoiClient } = require("aoi.js");
 
 const bot = new AoiClient({
     token: "DISCORD_BOT_TOKEN",
-    intents: ["messageContent", "guilds", "guildMessages"],
+    intents: ["GUILDS", "GUILD_MESSAGES"],
     prefix: "DISCORD_BOT_PREFIX"
 })
 
 
-const { Plugins } = require("midori.js"); 
+const { Plugins } = require("midori.js-lite"); 
 const plugins = new Plugins({ bot:bot }); 
 plugins.loadPlugins(); 
 
@@ -63,18 +59,13 @@ bot.command({
 })
 ```
 
-* Links
-
-[Support Server](https://discord.gg/KTFnKuPSqW)
-<br>
-[Docs](https://team-hype.gitbook.io/midori.js/starting/setup)
-<br>
-
 * Developers
 
 <strong>ZeRealOne</strong>
 <br>
 <strong>ItsHyper</strong>
+<br>
+<strong>spook>/strong>
 
 
 
