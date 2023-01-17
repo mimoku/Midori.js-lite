@@ -2,28 +2,168 @@ class Plugins {
   constructor(args) {
     this.args = args;
     if (!args.bot) {
-      console.log("[MIDORI.JS-LITE] You have not inputted your aoi client! Exiting Code!");
+      console.log("You have not inpputted your aoi client! Exiting Code!");
       process.exit(0);
     }
   }
   loadPlugins() {
     const bot = this.args.bot;
 
-    bot.functionManager.createCustomFunction({
-      name: '$i',
-      type: 'djs',
-      code: async d => {
-        const data = d.util.aoiFunc(d);
-          //nothing here, it's comment
-        return {
-          code: d.util.setCode(data)
-        }
-      }
+    bot.functionManager.createFunction({
+      name: '$request',
+      params: [""],
+      type: 'aoi.js',
+      code: `$httpRequest[$message[1];$message[2];;$message[3];Failed to request!]`
+    });
+
+    bot.functionManager.createFunction({
+      name: '$showType',
+      params: [""],
+      type: 'aoi.js',
+      code: `$botTyping`
+    });
+
+    bot.functionManager.createFunction({
+      name: '$serverID',
+      params: [""],
+      type: 'aoi.js',
+      code: `$guildID`
+    });
+
+    bot.functionManager.createFunction({
+      name: '$userID',
+      params: [""],
+      type: 'aoi.js',
+      code: `$authorID`
+    });
+
+    bot.functionManager.createFunction({
+      name: '$pingAuthorID',
+      params: [""],
+      type: 'aoi.js',
+      code: `<@$authorID>`
+    });
+
+
+    bot.functionManager.createFunction({
+      name: '$ownerID',
+      params: [""],
+      type: 'aoi.js',
+      code: `$botOwnerID`
+    });
+
+
+    bot.functionManager.createFunction({
+      name: '$ownerTag',
+      params: [""],
+      type: 'aoi.js',
+      code: `<@$botOwnerID>`
+    });
+
+    bot.functionManager.createFunction({
+      name: '$purge',
+      params: [""],
+      type: 'aoi.js',
+      code: `$clear[$message[1]]`
+    });
+
+    bot.functionManager.createFunction({
+      name: '$cpuUsage',
+      params: [""],
+      type: 'aoi.js',
+      code: `$cpu`
+    });
+
+
+
+
+  bot.functionManager.createFunction({
+     name: '$allCommands',
+       type: 'aoi.js',
+       params: [""],
+      code: `$commandsCount`
+ });
+
+    bot.functionManager.createFunction({
+      name: '$botToken',
+      params: [""],
+      type: 'aoi.js',
+      code: `Do not share this token with anyone else! ||$clientToken||
+      $onlyForIDs[$botOwnerID;{newEmbed:{title:Mimoku.js-Lite}{description:You are not the owner of this bot.}{color:ff0000}`
+    });
+
+
+    bot.functionManager.createFunction({
+      name: '$botID',
+      params: [""],
+      type: 'aoi.js',
+      code: `$clientID`
+    });
+
+
+    bot.functionManager.createFunction({
+      name: '$returnTime',
+      params: [""],
+      type: 'aoi.js',
+      code: `$executionTime`
+    });
+
+
+    bot.functionManager.createFunction({
+      name: '$cacheUsers',
+      params: [""],
+      type: 'aoi.js',
+      code: `$cacheMembers`
+    });
+
+
+    bot.functionManager.createFunction({
+      name: '$usage',
+      params: [""],
+      type: 'aoi.js',
+      code: `$ram`
+    });
+
+
+    bot.functionManager.createFunction({
+      name: '$pack',
+      params: [""],
+      type: 'aoi.js',
+      code: `Midori.js-lite is already packed with $ping.`
+    });
+
+
+    bot.functionManager.createFunction({
+      name: '$botInvite',
+      params: [""],
+      type: 'aoi.js',
+      code: `$getBotInvite`
+    });
+
+    bot.functionManager.createFunction({
+      name: '$version',
+      params: [""],
+      type: 'aoi.js',
+      code: `(aoi.js vers $packageVer`
+    });
+
+    bot.functionManager.createFunction({
+      name: '$onlyServerCmd',
+      params: [""],
+      type: 'aoi.js',
+      code: `$onlyIf[$guildID!=;]`
+    });
+
+    bot.functionManager.createFunction({
+      name: '$bannedUsers',
+      params: [""],
+      type: 'aoi.js',
+      code: `$banCount[$guildID]`
     });
 
     
     
-    bot.functionManager.createCustomFunction({
+    bot.functionManager.createFunction({
       name: "$neko",
       type: "djs",
       code: async d => {
@@ -42,7 +182,7 @@ class Plugins {
     });
 
 
-    bot.functionManager.createCustomFunction({
+    bot.functionManager.createFunction({
       name: "$meme",
       type: "djs",
       code: async d => {
@@ -62,7 +202,7 @@ class Plugins {
 
 
 
-    bot.functionManager.createCustomFunction({
+    bot.functionManager.createFunction({
       name: "$varExists", 
       type: "djs", 
       code: async d => { 
@@ -82,7 +222,7 @@ class Plugins {
     });
 
 
-    bot.functionManager.createCustomFunction({
+    bot.functionManager.createFunction({
         name: "$dog",
         type: "djs",
         code: async d => {
@@ -101,7 +241,7 @@ class Plugins {
       });
 
     
-      bot.functionManager.createCustomFunction({
+      bot.functionManager.createFunction({
         name: "$fact",
         type: "djs",
         code: async d => {
@@ -131,7 +271,7 @@ class Plugins {
 
 
 
-      bot.functionManager.createCustomFunction({
+      bot.functionManager.createFunction({
         name: "$cat",
         type: "djs",
         code: async d => {
@@ -161,7 +301,7 @@ class Plugins {
                                                   
       });
 
-      bot.functionManager.createCustomFunction({
+      bot.functionManager.createFunction({
         name: "$panda",
         type: "djs",
         code: async d => {
@@ -190,7 +330,7 @@ class Plugins {
     
     });
 
-    bot.functionManager.createCustomFunction({
+    bot.functionManager.createFunctionn({
         name: "$pikachu",
         type: "djs",
         code: async d => {
@@ -219,7 +359,7 @@ class Plugins {
         }
     });
 
-    bot.functionManager.createCustomFunction({
+    bot.functionManager.createFunction({
         name: "$quote",
         type: "djs",
         code: async d => {
@@ -246,7 +386,7 @@ class Plugins {
         }
     });
 
-    bot.functionManager.createCustomFunction({
+    bot.functionManager.createFunction({
         name: "$hug",
         type: "djs",
         code: async d => {
@@ -274,7 +414,7 @@ class Plugins {
     });
 
     
-    bot.functionManager.createCustomFunction({
+    bot.functionManager.createFunctionn({
         name: "$pat",
         type: "djs",
         code: async d => {
@@ -302,7 +442,7 @@ class Plugins {
     });
 
         
-    bot.functionManager.createCustomFunction({
+    bot.functionManager.createFunction({
         name: "$ver",
         type: "djs",
         code: async d => {
@@ -395,7 +535,7 @@ class Plugins {
     });
 
     
-    bot.functionManager.createCustomFunction({
+    bot.functionManager.createFunction({
         name: "$animal",
         type: "djs",
         code: async d => {
@@ -435,7 +575,7 @@ class Plugins {
 
 
 
-bot.functionManager.createCustomFunction({
+bot.functionManager.createFunction({
         name: "$nsfw",
         type: "djs",
         code: async d => {
