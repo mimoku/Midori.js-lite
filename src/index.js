@@ -2,7 +2,7 @@ class Plugins {
   constructor(args) {
     this.args = args;
     if (!args.bot) {
-      console.log("You have not inpputted your aoi client! Exiting Code!");
+      console.error("[Midori.js-Lite] You have not inputted your aoi.js client.");
       process.exit(0);
     }
   }
